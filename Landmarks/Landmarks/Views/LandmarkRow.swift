@@ -18,6 +18,12 @@ struct LandmarkRow: View {
             Text(landmark.name)
             
             Spacer()
+            
+            if landmark.isFavorite {
+                // 즐겨찾기 하면 별
+                Image(systemName: "star.fill")
+                    .foregroundStyle(.yellow) // 오 색 변경 가능
+            }
         }
     }
 }
