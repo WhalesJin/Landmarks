@@ -7,7 +7,9 @@
 
 import Foundation
 
-var landmarks: [Landmark] = load("landmarkData.json") // 초기화 하는 배열
+class ModelData: ObservableObject {
+    var landmarks: [Landmark] = load("landmarkData.json") // 초기화 하는 배열
+}
 
 // 앱의 메인 번들에서 특정 이름의 JSON 데이터를 가져오는 load(_:) 메서드
 func load<T: Decodable>(_ filename: String) -> T {

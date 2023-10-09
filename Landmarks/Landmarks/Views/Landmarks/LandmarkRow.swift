@@ -18,12 +18,20 @@ struct LandmarkRow: View {
             Text(landmark.name)
             
             Spacer()
+            
+            if landmark.isFavorite {
+                // 즐겨찾기 하면 별
+                Image(systemName: "star.fill")
+                    .foregroundStyle(.yellow) // 오 색 변경 가능
+            }
         }
     }
 }
 
 struct LandmarkRow_Previews: PreviewProvider {
     static var previews: some View {
+        let landmarks = ModelData().landmarks
+        
         VStack {
             LandmarkRow(landmark: landmarks[0])
             LandmarkRow(landmark: landmarks[1])
